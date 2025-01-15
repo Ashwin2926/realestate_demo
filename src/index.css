@@ -1,0 +1,80 @@
+
+
+
+/* features */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  gap: 2rem;
+}
+
+.features-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.features-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.features-text p {
+  margin-bottom: 2rem;
+  color: #666;
+  font-size: 1rem;
+}
+
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature h3 {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.feature p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.features-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.features-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 50px; /* This creates the curve */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+  }
+
+  .features-text {
+    text-align: center;
+  }
+
+  .features-image {
+    margin-top: 2rem;
+  }
+}
+
