@@ -1,0 +1,103 @@
+.team-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* SVG Circle Lines */
+  .circle-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0; /* Behind all other content */
+  }
+  
+  .central-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2; /* Above the circles */
+    padding: 1rem;
+  }
+  
+  .central-text h2 {
+    font-size: clamp(2rem, 5vw, 3rem); /* Scales with screen size */
+    color: #0044cc;
+    margin-bottom: 1rem;
+  }
+  
+  .central-text p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: #666;
+  }
+  
+  .circles {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Above SVG lines */
+  }
+  
+  .circle {
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: float 6s infinite ease-in-out;
+  }
+  
+  .circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .circle img:hover {
+    transform: scale(1.1); /* Subtle zoom effect on hover */
+  }
+  
+  /* Floating animation */
+  @keyframes float {
+    0% {
+      transform: translate(-50%, -50%) translateY(0px);
+    }
+    50% {
+      transform: translate(-50%, -50%) translateY(-20px);
+    }
+    100% {
+      transform: translate(-50%, -50%) translateY(0px);
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .circle {
+      width: calc(var(--size) * 0.8);
+      height: calc(var(--size) * 0.8);
+    }
+  
+    .central-text h2 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+  
+    .central-text p {
+      font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+  }
+  

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import './Navbar.css'
+import "./Navbar.css";
 
 function Navbar() {
-  const [showSearch, setShowSearch] = useState(false); // State for showing search bar in navbar
-  const [isScrolled, setIsScrolled] = useState(false); // State to track page scroll
+  const [showSearch, setShowSearch] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Toggle the search bar visibility
   const toggleSearch = () => setShowSearch(!showSearch);
@@ -13,7 +13,7 @@ function Navbar() {
   // Track scrolling to update `isScrolled`
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100); // Change threshold as needed
+      setIsScrolled(window.scrollY > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -22,11 +22,15 @@ function Navbar() {
   }, []);
 
   return (
-    <header className={`sticky-top navbar navbar-expand-lg bg-light shadow-sm ${isScrolled ? "scrolled" : ""}`}>
-      <div className="container-fluid">
+    <header
+      className={`sticky-top navbar navbar-expand-lg bg-light shadow-sm ${
+        isScrolled ? "scrolled" : ""
+      }`}
+    >
+      <div className="container">
         {/* Logo */}
         <a className="navbar-brand fw-bold text-primary" href="/">
-          Demo
+          CapitalStay
         </a>
 
         {/* Toggler button for mobile view */}
@@ -44,66 +48,70 @@ function Navbar() {
 
         {/* Collapsible menu */}
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul className="navbar-nav gap-3 align-items-center">
+          <ul className="navbar-nav gap-4 align-items-center">
+            {/* Links */}
             <li className="nav-item">
               <a className="nav-link text-secondary" href="/">
-                AED
+                Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-secondary" href="/">
-                Help
+              <a className="nav-link text-secondary" href="/properties">
+                Properties
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-secondary" href="/">
-                List a Property
+              <a className="nav-link text-secondary" href="/about">
+                About Us
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-secondary" href="/">
-                Owners Login
+              <a className="nav-link text-secondary" href="/contact">
+                Contact Us
               </a>
             </li>
 
-            {/* Search Bar for larger screens */}
+            {/* List a Property Button */}
+            <li className="nav-item">
+              <a
+                className="btn btn-primary text-white rounded-pill px-4"
+                href="/list-property"
+              >
+                List Your Property
+              </a>
+            </li>
+
+            {/* Search Bar */}
             {isScrolled && (
               <div className="d-none d-lg-flex">
                 <input
                   type="text"
                   className="form-control me-2"
-                  placeholder="Search..."
+                  placeholder="Search properties..."
                   style={{ maxWidth: "200px" }}
                 />
               </div>
             )}
 
-            {/* Button for mobile search */}
+            {/* Mobile Search Button */}
             <li className="nav-item d-lg-none">
               <button className="btn btn-outline-primary" onClick={toggleSearch}>
                 <i className="bi bi-search"></i> {/* Bootstrap Icon */}
-              </button>
-            </li>
-
-            {/* Menu Button */}
-            <li className="nav-item">
-              <button className="btn btn-outline-primary rounded-pill px-3">
-                Menu
               </button>
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Search bar dropdown for mobile */}
+      {/* Search Bar Dropdown for Mobile */}
       {showSearch && (
         <div className="search-bar bg-light p-3 shadow-sm">
           <input
             type="text"
-            className="form-control"
-            placeholder="Search..."
+            className="form-control mb-2"
+            placeholder="Search properties..."
           />
-          <button className="btn btn-primary mt-2 w-100" onClick={toggleSearch}>
+          <button className="btn btn-primary w-100" onClick={toggleSearch}>
             Search
           </button>
         </div>

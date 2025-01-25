@@ -1,53 +1,58 @@
-/* Amenities.css */
-.amenities {
-    text-align: center;
-    padding: 3rem 1.5rem;
-    background-color: #f8f9fa;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .section-subtitle {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 2rem;
-  }
-  
-  .amenities-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-  }
-  
-  .amenity-item {
-    text-align: center;
-    flex: 1 1 200px;
-    max-width: 250px;
-    padding: 1.5rem;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .amenity-item i {
-    font-size: 2rem;
-    color: #ffc107;
-    margin-bottom: 1rem;
-  }
-  
-  .amenity-item h3 {
+/* Anemities.css */
+
+/* Features Section */
+.features-section {
+  background: #f9f9f9;
+  padding: 2rem;
+}
+
+.features-section .icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #000;
+  border-radius: 50%;
+}
+
+.features-section .image-wrapper img {
+  border-radius: 20%;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.features-section .image-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+.features-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.features-section p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.features-section h6 {
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+.features-section .small {
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .features-section .icon {
+    width: 40px;
+    height: 40px;
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
   }
-  
-  .amenity-item p {
-    font-size: 0.9rem;
-    color: #666;
-  }
-  
+}

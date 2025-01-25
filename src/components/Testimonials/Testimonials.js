@@ -3,30 +3,30 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Testimonials() {
+const Testimonials = () => {
   const testimonials = [
     {
-      text: "Primestay made our Dubai stay unforgettable! The property was spotless, and customer service was amazing.",
-      name: "John Doe",
+      text: "Found Capital Stay through a recommendation from my friend who stayed a year ago.",
+      name: "Lillian Smith",
     },
     {
-      text: "The easiest booking experience I've had! Will definitely use Primestay again.",
-      name: "Jane Smith",
+      text: "Stayed for a month during/in-between my house purchase, was excellent.",
+      name: "John Donn",
     },
     {
-      text: "Great homes and great service. I felt at home from the moment I arrived.",
-      name: "Carlos Martinez",
+      text: "Tom did a great job helping me find exactly what I was looking for in a home.",
+      name: "Anthony Scotsman",
     },
   ];
 
   return (
     <section className="py-5 bg-light">
       <div className="container">
-        <h2 className="text-center mb-4">What Our Guests Say</h2>
-        <Carousel>
+        <h2 className="text-center mb-4">What They're Saying About Us</h2>
+        <Carousel interval={5000}>
           {testimonials.map((testimonial, index) => (
             <Carousel.Item key={index}>
-              <div className="d-flex flex-column justify-content-center align-items-center text-center">
+              <div className="d-flex flex-column align-items-center text-center">
                 <p className="fs-5 fst-italic">"{testimonial.text}"</p>
                 <p className="fw-bold">- {testimonial.name}</p>
               </div>
@@ -36,6 +36,6 @@ function Testimonials() {
       </div>
     </section>
   );
-}
+};
 
 export default Testimonials;

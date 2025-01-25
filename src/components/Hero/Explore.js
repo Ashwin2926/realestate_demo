@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import image1 from '../../image1.jpg';
 
 function ExploreOptionsPage() {
   const locations = [
@@ -7,25 +8,25 @@ function ExploreOptionsPage() {
       name: "Downtown Dubai",
       description:
         "Dubai Downtown is a vibrant, modern district known for its iconic landmarks, luxury shopping, and bustling nightlife, featuring the Burj Khalifa, Dubai Mall, and Dubai Fountain.",
-      image: "image2.jpg", // Replace with correct image
+      image: image1, // Replace with correct image
     },
     {
       name: "Dubai Marina",
       description:
         "Dubai Marina is a luxurious waterfront district known for its stunning skyline, upscale dining, shopping, and vibrant nightlife.",
-      image: "image2.jpg", // Replace with correct image
+      image: image1, // Replace with correct image
     },
     {
       name: "Jumeirah Village Circle",
       description:
         "Jumeirah Village Circle is a tranquil residential community in Dubai offering a blend of modern villas, townhouses, and apartments with lush green spaces and family-friendly amenities.",
-      image: "image2.jpg", // Replace with correct image
+      image: image1, // Replace with correct image
     },
     {
       name: "Business Bay",
       description:
         "Business Bay is a bustling commercial hub featuring high-rise offices, residential buildings, and luxury hotels along the Dubai Canal, catering to businesses and professionals.",
-      image: "image2.jpg", // Replace with correct image
+      image: image1, // Replace with correct image
     },
   ];
 
