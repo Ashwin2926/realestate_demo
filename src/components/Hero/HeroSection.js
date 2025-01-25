@@ -34,10 +34,10 @@ function LandingPage() {
             backgroundImage: `url(${backgroundImages[currentBackground]})`,
           }}
         >
-          <h1 className="fw-bold display-4">Short-term rental homes in Dubai.</h1>
-          <p className="text-white-50 mb-4 lead">
+          <h1 className="fw-bold display-4">Relax, you’re booking your home</h1>
+          {/* <p className="text-white-50 mb-4 lead">
             Discover your home away from home in Dubai, ideal for both leisure and business stays.
-          </p>
+          </p> */}
           <div
             className="search-bar container d-flex flex-column flex-md-row justify-content-center align-items-center gap-2 p-3"
           >
