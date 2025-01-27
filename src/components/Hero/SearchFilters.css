@@ -1,49 +1,89 @@
-.search-bar {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
-  max-width: 700px;
+/* Hero Section Enhancements */
+.hero-section {
+  position: relative;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Search Form */
+.search-form {
+  background-color: rgba(255, 255, 255, 0.9);
+  max-width: 900px;
   width: 100%;
-  padding: 1rem;
 }
 
-.search-bar .form-control {
-  padding: 0.8rem;
+.search-form .form-control {
+  padding: 0.75rem;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  flex: 1;
+  border-radius: 5px;
+  font-size: 0.95rem;
 }
 
-.search-bar .form-control:focus {
+.search-form .form-control:focus {
   box-shadow: none;
-  border-color: #ffc107;
+  border-color: #0d6efd;
 }
 
-.search-bar .search-btn {
-  padding: 0.8rem 2rem;
-  background-color: #ffc107;
+.search-form .btn-primary {
+  background-color: #0d6efd;
   border: none;
-  color: #333;
+  font-size: 1rem;
   font-weight: bold;
-  cursor: pointer;
-  border-radius: 4px;
-  flex-shrink: 0;
+  padding: 0.75rem 1rem;
 }
 
-.search-bar .search-btn:hover {
-  background-color: #e0a800;
+.search-form .btn-primary:hover {
+  background-color: #0056b3;
 }
 
+.search-form .btn-primary:focus {
+  box-shadow: none;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .search-bar {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  .search-form {
+    padding: 1rem;
+  }
+
+  .search-form .row > div {
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-form .row {
     flex-direction: column;
+    gap: 0.75rem;
   }
 
-  .search-bar .form-control {
-    margin-bottom: 0.5rem;
-    width: 100%;
-  }
-
-  .search-bar .search-btn {
+  .search-form .form-control {
     width: 100%;
   }
 }

@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./Navbar.css";
+import logo from "../../logo.png"; // Replace with the correct path to your logo image
 
-function Navbar() {
+function Navbar({toggleForm}) {
   const [showSearch, setShowSearch] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -29,8 +30,13 @@ function Navbar() {
     >
       <div className="container">
         {/* Logo */}
-        <a className="navbar-brand fw-bold text-primary" href="/">
-          CapitalStay
+        <a className="navbar-brand" href="/">
+          <img
+            src={logo}
+            alt="Logo"
+            className="logo"
+            style={{ height: "60px", width: "auto" }} // Adjust the size of the logo here
+          />
         </a>
 
         {/* Toggler button for mobile view */}
@@ -51,71 +57,38 @@ function Navbar() {
           <ul className="navbar-nav gap-4 align-items-center">
             {/* Links */}
             <li className="nav-item">
-              <a className="nav-link text-secondary" href="/">
+              <a className="nav-link" href="/">
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-secondary" href="/properties">
+              <a className="nav-link" href="/properties">
                 Properties
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-secondary" href="/about">
+              <a className="nav-link" href="/about">
                 About Us
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-secondary" href="/contact">
+              <a className="nav-link" href="/contact">
                 Contact Us
               </a>
             </li>
 
             {/* List a Property Button */}
             <li className="nav-item">
-              <a
-                className="btn btn-primary text-white rounded-pill px-4"
-                href="/list-property"
+              <button
+                className="btn btn-primary"
+                onClick={toggleForm}
               >
                 List Your Property
-              </a>
-            </li>
-
-            {/* Search Bar */}
-            {isScrolled && (
-              <div className="d-none d-lg-flex">
-                <input
-                  type="text"
-                  className="form-control me-2"
-                  placeholder="Search properties..."
-                  style={{ maxWidth: "200px" }}
-                />
-              </div>
-            )}
-
-            {/* Mobile Search Button */}
-            <li className="nav-item d-lg-none">
-              <button className="btn btn-outline-primary" onClick={toggleSearch}>
-                <i className="bi bi-search"></i> {/* Bootstrap Icon */}
               </button>
             </li>
           </ul>
         </div>
       </div>
-
-      {/* Search Bar Dropdown for Mobile */}
-      {showSearch && (
-        <div className="search-bar bg-light p-3 shadow-sm">
-          <input
-            type="text"
-            className="form-control mb-2"
-            placeholder="Search properties..."
-          />
-          <button className="btn btn-primary w-100" onClick={toggleSearch}>
-            Search
-          </button>
-        </div>
-      )}
     </header>
   );
 }

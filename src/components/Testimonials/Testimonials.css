@@ -1,4 +1,3 @@
-/* Testimonial.css */
 .testimonials {
   background-color: #f8f9fa; /* Light background for section */
   color: #343a40; /* Dark text */
@@ -11,35 +10,50 @@
   margin-bottom: 1.5rem;
 }
 
-.testimonials .carousel-item {
-  transition: transform 0.6s ease-in-out;
+.testimonial-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.testimonials p {
-  color: #6c757d; /* Muted text for testimonial text */
-  font-size: 1.1rem;
+.testimonial-card img {
+  border: 2px solid #dee2e6;
 }
 
-.testimonials .fw-bold {
+.testimonial-card .fst-italic {
+  font-style: italic;
+  color: #495057; /* Slightly muted dark for quotes */
+  font-size: 1rem;
+}
+
+.testimonial-card .fw-bold {
   color: #212529; /* Bold names in dark color */
 }
 
-.testimonials .fst-italic {
-  font-style: italic;
-  color: #495057; /* Slightly muted dark for quotes */
+.testimonial-card .bi-star-fill {
+  font-size: 1rem;
+  margin-right: 2px;
 }
 
-.testimonials .text-center {
-  max-width: 700px;
-  margin: auto;
-  padding: 1.5rem;
+.testimonial-card .bi-star {
+  font-size: 1rem;
+  margin-right: 2px;
+  color: #adb5bd;
 }
 
-.testimonials .carousel-indicators [data-bs-target] {
+.carousel-indicators [data-bs-target] {
   background-color: #343a40; /* Dark indicator dots */
 }
 
-.testimonials .carousel-indicators [data-bs-target]:hover,
-.testimonials .carousel-indicators [data-bs-target].active {
+.carousel-indicators [data-bs-target]:hover,
+.carousel-indicators [data-bs-target].active {
   background-color: #007bff; /* Active indicator color */
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 15px;
+  }
 }

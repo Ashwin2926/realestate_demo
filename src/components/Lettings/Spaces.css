@@ -1,0 +1,140 @@
+.team-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .central-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    padding: 1rem;
+  }
+  
+  .central-text h2 {
+    font-size: clamp(2rem, 5vw, 3rem); /* Scales with screen size */
+    color: #0044cc;
+    margin-bottom: 1rem;
+  }
+  
+  .central-text p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: #666;
+  }
+  
+  .circles {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .circle {
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: float 6s infinite ease-in-out;
+  }
+  
+  .circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .circle img:hover {
+    transform: scale(1.1); /* Subtle zoom effect on hover */
+  }
+  
+  /* Floating animation */
+  @keyframes float {
+    0% {
+      transform: translate(-50%, -50%) translateY(0px);
+    }
+    50% {
+      transform: translate(-50%, -50%) translateY(-20px);
+    }
+    100% {
+      transform: translate(-50%, -50%) translateY(0px);
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .circle {
+      width: calc(var(--size) * 0.8);
+      height: calc(var(--size) * 0.8);
+    }
+  
+    .central-text h2 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+  
+    .central-text p {
+      font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+  }
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .image-hover {
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .image-hover:hover {
+    transform: scale(1.05); /* Slight zoom-in */
+    filter: brightness(0.9); /* Slightly dim the image */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
+  }
+  
+  /* For smooth transition effect */
+  .card {
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Shadow effect on card hover */
+  }
+  
+  /* Scrollbar styles */
+  .d-flex::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .d-flex::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
+  }
+  
+  .d-flex::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .d-flex {
+      flex-direction: row; /* Horizontal scroll */
+    }
+  
+    .card {
+      width: calc(80% - 20px); /* Adjust card width */
+    }
+  }
+  

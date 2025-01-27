@@ -11,9 +11,9 @@ const Footer = () => {
         <div className="footer-top">
           <div className="brand">
             <h5>Capital Stay</h5>
-            <p>Your Dubai Home | Your London Home</p>
+            <p style={{color: "#fff"}}>Your Dubai Home | Your London Home</p>
           </div>
-          <p>
+          <p style={{color: "#fff"}}>
             Stay with us at one of our centrally located apartments and you'll find yourself in a unique property in an exceptional location. 
             In the heart of the city, right where you want to be, with a 24-hour host on call!
           </p>
@@ -54,10 +54,10 @@ const Footer = () => {
         </div>
 
         {/* Contact Information */}
-        <div className="footer-contact">
-          <p>Capital Stay Dubai, 4th Floor, The Binary Tower, Business Bay, Dubai</p>
-          <p>+971 54 704 7913</p>
-          <p>Email: <a href="mailto:hellodubai@capitalstayuae.com">hellodubai@capitalstayuae.com</a></p>
+        <div className="footer-contact" >
+          <p style={{color: "#fff"}}> Capital Stay Dubai, 4th Floor, The Binary Tower, Business Bay, Dubai</p>
+          <p style={{color: "#fff"}}>+971 54 704 7913</p>
+          <p style={{color: "#fff"}}>Email: <a href="mailto:hellodubai@capitalstayuae.com">hellodubai@capitalstayuae.com</a></p>
         </div>
 
         {/* Social and Payment Icons */}
@@ -77,8 +77,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="footer-bottom text-center">
-          <p>&copy; {new Date().getFullYear()} Capital Stay. All Rights Reserved.</p>
+        <div className="footer-bottom text-center" >
+          <p style={{color: "#fff"}}>&copy; {new Date().getFullYear()} Capital Stay. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

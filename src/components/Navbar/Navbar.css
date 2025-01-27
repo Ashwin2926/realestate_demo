@@ -1,4 +1,44 @@
+
+/* Navbar.css */
+
+/* Scrolled Navbar */
 .navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Logo Styling */
+.logo {
+  height: 60px; /* Adjust height for visibility */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Navbar Links */
+.nav-link {
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Button Styling */
+.navbar .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.navbar .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+
+/* .navbar.scrolled {
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -23,4 +63,4 @@
 
 .nav-link:hover {
   color: #0056b3;
-}
+} */
