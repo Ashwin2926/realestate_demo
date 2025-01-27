@@ -1,6 +1,7 @@
 import React from "react";
 import lettingImage from '../../image1.jpg';
 import "bootstrap/dist/css/bootstrap.min.css";
+import './Lettings.css'; // Import the CSS file for styling
 
 function Lettings() {
   return (
@@ -20,7 +21,7 @@ function Lettings() {
           <img
             src={lettingImage} // Image in public folder
             alt="Lettings"
-            className="img-fluid rounded shadow"
+            className="img-fluid letting-image rounded shadow"
           />
         </div>
       </div>
@@ -39,7 +40,7 @@ function Lettings() {
           <img
             src={lettingImage} // Image in public folder
             alt="Stay with us"
-            className="img-fluid rounded shadow"
+            className="img-fluid letting-image rounded shadow"
           />
         </div>
       </div>
