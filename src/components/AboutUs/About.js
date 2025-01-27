@@ -1,15 +1,17 @@
 import React from "react";
 import AboutImage from '../../pic2.jpg';
-import './About.css'
+import './About.css';
 
 const AboutUs = () => {
   return (
     <div className="about-container">
       <h2 className="text-center fw-bold mb-5">About Us</h2>
+
+      {/* First Row */}
       <div className="row align-items-center mb-5">
         <div className="col-md-6 mb-4 mb-md-0 image-wrapper">
           <img
-            src= {AboutImage}// Replace with actual image URL
+            src={AboutImage} // Replace with actual image URL
             alt="About Us"
             className="img-fluid rounded shadow"
           />
@@ -25,15 +27,9 @@ const AboutUs = () => {
         </div>
       </div>
 
+      {/* Second Row */}
       <div className="row align-items-center">
-        <div className="col-md-6 order-md-2 mb-4 mb-md-0 image-wrapper">
-          <img
-            src={AboutImage} // Replace with actual image URL
-            alt="Why Choose Us"
-            className="img-fluid rounded shadow"
-          />
-        </div>
-        <div className="col-md-6 order-md-1">
+        <div className="col-md-12 order-md-1">
           <h3 className="fw-bold mb-3">Why Capital Stay Holiday Homes is a Perfect Choice</h3>
           <p>
             Holiday homes offer home-like comfort, often providing more space and amenities than traditional hotel rooms. This allows guests to enjoy a more comfortable and personalized experience. Renting a holiday home is cost-effective for families or groups, as it can be more economical than booking multiple hotel rooms. Additionally, kitchen facilities help save on dining costs.

@@ -2,44 +2,41 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./Navbar.css";
-import logo from "../../logo.png"; // Replace with the correct path to your logo image
+import logo from "../../logo.png"; // Adjust the path to your logo
 
-function Navbar({toggleForm}) {
-  const [showSearch, setShowSearch] = useState(false);
+function Navbar({ toggleForm }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Toggle the search bar visibility
-  const toggleSearch = () => setShowSearch(!showSearch);
-
-  // Track scrolling to update `isScrolled`
+  // Scroll tracking effect
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      if (window.scrollY > 100) {
+        setIsScrolled(true); // Add the scrolled class
+      } else {
+        setIsScrolled(false); // Remove the scrolled class
+      }
     };
 
+    // Attach the scroll listener
     window.addEventListener("scroll", handleScroll);
 
+    // Cleanup the event listener
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`sticky-top navbar navbar-expand-lg bg-light shadow-sm ${
-        isScrolled ? "scrolled" : ""
+      className={`navbar navbar-expand-lg sticky-top ${
+        isScrolled ? "scrolled" : "bg-light"
       }`}
     >
       <div className="container">
         {/* Logo */}
         <a className="navbar-brand" href="/">
-          <img
-            src={logo}
-            alt="Logo"
-            className="logo"
-            style={{ height: "60px", width: "auto" }} // Adjust the size of the logo here
-          />
+          <img src={logo} alt="Logo" className="logo" />
         </a>
 
-        {/* Toggler button for mobile view */}
+        {/* Toggler for mobile view */}
         <button
           className="navbar-toggler"
           type="button"
@@ -52,10 +49,9 @@ function Navbar({toggleForm}) {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Collapsible menu */}
+        {/* Navbar links */}
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav gap-4 align-items-center">
-            {/* Links */}
             <li className="nav-item">
               <a className="nav-link" href="/">
                 Home
@@ -76,13 +72,8 @@ function Navbar({toggleForm}) {
                 Contact Us
               </a>
             </li>
-
-            {/* List a Property Button */}
             <li className="nav-item">
-              <button
-                className="btn btn-primary"
-                onClick={toggleForm}
-              >
+              <button className="btn btn-primary" onClick={toggleForm}>
                 List Your Property
               </button>
             </li>

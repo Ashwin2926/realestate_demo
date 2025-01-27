@@ -1,5 +1,3 @@
-/* Anemities.css */
-
 /* Features Section */
 .features-section {
   background: #f9f9f9;
@@ -34,14 +32,14 @@
 }
 
 .features-section .image-wrapper:hover img {
-  transform: scale(1.1); /* Slight zoom on hover */
-  filter: brightness(0.9); /* Slightly dim the image */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transform: scale(1.1);
+  filter: brightness(0.9);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .features-section .image-wrapper:hover {
-  transform: scale(1.05); /* Slightly scale up the wrapper */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .features-section h2 {
@@ -64,14 +62,68 @@
   color: #666;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .features-section .icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
+  .features-section {
+    padding: 1.5rem; /* Reduce padding for smaller screens */
+  }
+
+  .features-section h2 {
+    font-size: 1.5rem; /* Adjust heading font size */
+  }
+
+  .features-section p {
+    font-size: 0.9rem; /* Adjust paragraph font size */
+  }
+
+  .features-section .row.align-items-center {
+    flex-direction: column-reverse; /* Stack text section above image */
+  }
+
+  .features-section .col-lg-6 {
+    text-align: center; /* Center align text for smaller screens */
+    margin-bottom: 1.5rem; /* Add spacing between sections */
   }
 
   .features-section .image-wrapper img {
-    border-radius: 10%;
+    border-radius: 10%; /* Adjust image border radius */
+  }
+
+  /* Features Grid */
+  .features-section .row.gy-4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns side-by-side */
+    gap: 1rem; /* Add spacing between items */
+    justify-content: center; /* Center items horizontally */
+  }
+
+  .features-section .col-6 {
+    flex: unset; /* Remove flex behavior */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; /* Ensure text starts aligned */
   }
 }
+
+/* Very Small Screens (Optional) */
+@media (max-width: 576px) {
+  .features-section .row.gy-4 {
+    grid-template-columns: 1fr; /* Stack features in a single column */
+    gap: 1.5rem; /* Increase spacing between rows */
+    justify-content: center; /* Center features horizontally */
+    align-items: center; /* Center features vertically */
+    text-align: center; /* Center-align text inside each feature */
+  }
+
+  .features-section .col-6 {
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center-align content within each feature */
+    justify-content: center; /* Center-align vertically */
+  }
+
+  .features-section .icon {
+    margin-bottom: 0.5rem; /* Add space between icon and text */
+  }
+}
+
