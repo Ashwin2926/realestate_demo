@@ -2,6 +2,7 @@
 .navbar {
   background-color: rgba(255, 255, 255, 1); /* Fully opaque by default */
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  padding: 0.5rem 1rem; /* Reduced padding for a shorter navbar */
 }
 
 /* Navbar when scrolled */
@@ -15,6 +16,8 @@
   color: #333;
   font-weight: 500;
   transition: color 0.3s ease-in-out;
+  font-size: 1rem; /* Ensure links are consistently sized */
+  text-transform: capitalize; /* Give links a clean look */
 }
 
 .nav-link:hover {
@@ -24,17 +27,53 @@
 
 /* Logo */
 .logo {
-  height: 60px;
+  height: 50px; /* Further reduced height for proportions */
   width: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Slightly enlarge logo on hover */
 }
 
 /* Button Styling */
 .navbar .btn-primary {
   background-color: #007bff;
   border-color: #007bff;
+  border-radius: 20px; /* Rounded button for modern look */
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
 }
 
 .navbar .btn-primary:hover {
   background-color: #0056b3;
   border-color: #004085;
+  transform: scale(1.05); /* Slight hover animation */
+}
+
+/* Toggler Icon Customization */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar .nav-link {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Sticky Navbar Styling */
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
 }

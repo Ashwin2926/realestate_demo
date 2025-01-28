@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "react-datepicker/dist/react-datepicker.css";
 import "./HeroSection.css";
 import ReactDatePicker from "react-datepicker";
+import { motion } from "framer-motion";
 import image1 from "../../image1.jpg";
 import image2 from "../../image2.jpg";
 import image3 from "../../image3.jpg";
@@ -35,19 +36,27 @@ function LandingPage() {
             backgroundRepeat: "no-repeat",
           }}
         >
-          <h1 className="fw-bold display-4 mb-4 text-shadow">
-          Relax, you’re booking your home
-          </h1>
-          {/* <p className="lead text-shadow mb-4">
-            Book your dream holiday home in just a few clicks.
-          </p> */}
-          <div className="search-form p-3 rounded shadow">
+          <motion.h1
+            className="fw-bold display-4 mb-4 text-shadow"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            Relax, you’re booking your home
+          </motion.h1>
+          <motion.div
+            className="search-form p-3 rounded shadow"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
             <div className="row g-3 align-items-center">
               <div className="col-lg-4 col-md-6">
                 <input
                   type="text"
                   className="form-control"
                   placeholder="Where do you want to stay?"
+                  aria-label="Enter your destination"
                 />
               </div>
               <div className="col-lg-2 col-md-3">
@@ -60,6 +69,7 @@ function LandingPage() {
                   minDate={new Date()}
                   placeholderText="From Date"
                   className="form-control"
+                  aria-label="Select start date"
                 />
               </div>
               <div className="col-lg-2 col-md-3">
@@ -72,6 +82,7 @@ function LandingPage() {
                   minDate={fromDate || new Date()}
                   placeholderText="To Date"
                   className="form-control"
+                  aria-label="Select end date"
                 />
               </div>
               <div className="col-lg-2 col-md-6">
@@ -80,13 +91,32 @@ function LandingPage() {
                   className="form-control"
                   placeholder="Guests"
                   min="1"
+                  aria-label="Enter number of guests"
                 />
               </div>
               <div className="col-lg-2 col-md-6">
                 <button className="btn btn-primary w-100">Search</button>
               </div>
             </div>
-          </div>
+          </motion.div>
+          <motion.div
+            className="additional-cta mt-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
+            <button className="btn btn-outline-light mx-2">Explore Destinations</button>
+            <button className="btn btn-outline-light mx-2">Learn More</button>
+          </motion.div>
+        </div>
+        <div className="progress-indicator d-flex justify-content-center mt-3">
+          {backgroundImages.map((_, index) => (
+            <div
+              key={index}
+              className={`indicator-dot ${currentBackground === index ? "active" : ""}`}
+              onClick={() => setCurrentBackground(index)}
+            ></div>
+          ))}
         </div>
       </main>
     </div>

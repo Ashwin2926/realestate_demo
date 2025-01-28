@@ -1,3 +1,5 @@
+
+/* HeroSection.css */
 .hero-section {
   background-size: cover;
   background-position: center;
@@ -13,8 +15,31 @@
   font-size: 2.5rem;
 }
 
-.hero-section p {
-  font-size: 1.2rem;
+.search-form {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.progress-indicator {
+  gap: 10px;
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator-dot.active {
+  background-color: white;
+}
+
+.additional-cta button {
+  border-radius: 20px;
 }
 
 @media (max-width: 768px) {
@@ -22,8 +47,14 @@
     font-size: 2rem;
   }
 
-  .hero-section p {
-    font-size: 1rem;
+  .search-form {
+    padding: 2rem;
   }
 }
 
+@media (max-width: 400px) {
+  .search-form .row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
