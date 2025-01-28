@@ -1,9 +1,9 @@
-
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./Navbar.css";
 import logo from "../../logo.png"; // Adjust the path to your logo
+import { FaHome, FaBuilding, FaInfoCircle, FaPhone } from "react-icons/fa";
 
 function Navbar({ toggleForm }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,26 +51,29 @@ function Navbar({ toggleForm }) {
         </button>
 
         {/* Navbar links */}
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
           <ul className="navbar-nav gap-4 align-items-center">
             <li className="nav-item">
               <a className="nav-link" href="/">
-                Home
+                <FaHome className="me-1" /> Home
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/properties">
-                Properties
+                <FaBuilding className="me-1" /> Properties
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/about">
-                About Us
+                <FaInfoCircle className="me-1" /> About Us
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/contact">
-                Contact Us
+                <FaPhone className="me-1" /> Contact Us
               </a>
             </li>
             <li className="nav-item">
