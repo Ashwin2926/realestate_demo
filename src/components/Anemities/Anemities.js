@@ -24,13 +24,14 @@ const Anemities = () => {
             <p className="text-muted">
               From fresh towels to late checkout, our app puts you in control.
             </p>
+            <div className="divider"></div>
             <div className="row gy-4 mt-4">
               {features.map((feature, index) => (
-                <div className="col-6 d-flex" key={index}>
-                  <div className="icon me-3">{feature.icon}</div>
-                  <div>
+                <div className="col-6" key={index}>
+                  <div className="card p-3 shadow-sm border-0 rounded-3">
+                    <div className="icon mb-3">{feature.icon}</div>
                     <h6 className="mb-1">{feature.title}</h6>
-                    <p className="small">{feature.desc}</p>
+                    <p className="small text-muted">{feature.desc}</p>
                   </div>
                 </div>
               ))}
@@ -45,6 +46,10 @@ const Anemities = () => {
                 alt="Family enjoying the stay"
                 className="img-fluid"
               />
+              <div className="image-overlay">
+                <h3 style={{color: "#fff"}}>Your Trusted Partner in Luxury Rentals</h3>
+                <button className="btn btn-primary px-4 py-2 rounded-pill shadow-sm mt-3">Explore Rentals</button>
+              </div>
             </div>
           </div>
         </div>

@@ -1,12 +1,15 @@
+/* Section Styling */
 .team-section {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-color: #f9f9f9;
+    background: linear-gradient(to bottom, #f9f9f9, #ffffff);
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
   }
   
   /* SVG Circle Lines */
@@ -17,35 +20,54 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 0; /* Behind all other content */
+    z-index: 0;
   }
   
+  .circle-lines svg circle {
+    animation: rotate 12s linear infinite;
+    transform-origin: center;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Central Text */
   .central-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2; /* Above the circles */
-    padding: 1rem;
+    z-index: 2;
+    color: #333333;
+    max-width: 80%;
   }
   
   .central-text h2 {
-    font-size: clamp(2rem, 5vw, 3rem); /* Scales with screen size */
-    color: #0044cc;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: bold;
+    background: linear-gradient(90deg, #0044cc, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
   }
   
   .central-text p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: #666;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: #666666;
   }
   
+  /* Team Circles */
   .circles {
     position: relative;
     width: 100%;
     height: 100%;
-    z-index: 2; /* Above SVG lines */
+    z-index: 1;
   }
   
   .circle {
@@ -57,28 +79,30 @@
     border-radius: 50%;
     overflow: hidden;
     transform: translate(-50%, -50%);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    animation: float 6s infinite ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #e0e7ff, #f3f4f6);
+    animation: float 8s infinite ease-in-out;
   }
   
   .circle img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease, filter 0.4s ease;
   }
   
   .circle img:hover {
-    transform: scale(1.1); /* Subtle zoom effect on hover */
+    transform: scale(1.2);
+    filter: brightness(1.1);
   }
   
-  /* Floating animation */
+  /* Floating Animation */
   @keyframes float {
     0% {
       transform: translate(-50%, -50%) translateY(0px);
     }
     50% {
-      transform: translate(-50%, -50%) translateY(-20px);
+      transform: translate(-50%, -50%) translateY(-15px);
     }
     100% {
       transform: translate(-50%, -50%) translateY(0px);
@@ -86,18 +110,25 @@
   }
   
   /* Responsive Adjustments */
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     .circle {
       width: calc(var(--size) * 0.8);
       height: calc(var(--size) * 0.8);
     }
   
     .central-text h2 {
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-size: clamp(2rem, 4vw, 3rem);
     }
   
     .central-text p {
-      font-size: clamp(0.8rem, 2vw, 1rem);
+      font-size: clamp(0.9rem, 2vw, 1.3rem);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .circle {
+      width: calc(var(--size) * 0.6);
+      height: calc(var(--size) * 0.6);
     }
   }
   

@@ -1,7 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Explore.css"; // Import CSS for styles
-import image1 from '../../image1.jpg';
+import "./Explore.css"; // Updated styles here
+import { motion } from "framer-motion"; // For animations
+import image1 from "../../image1.jpg";
 
 function ExploreOptionsPage() {
   const locations = [
@@ -34,20 +35,35 @@ function ExploreOptionsPage() {
   return (
     <div className="explore-page container-fluid py-5">
       <main>
-        <h2 className="text-center fw-bold mb-5">Holiday Homes Dubai: Explore Your Options</h2>
+        <h2 className="text-center fw-bold mb-5 modern-heading">
+          Holiday Homes Dubai: Explore Your Options
+        </h2>
         <div className="row justify-content-center">
           {locations.map((location, index) => (
-            <div className="col-lg-3 col-md-6 mb-4" key={index}>
+            <motion.div
+              className="col-lg-3 col-md-6 mb-4"
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
               <div className="card explore-card h-100 shadow-sm">
                 <div className="image-wrapper">
-                  <img src={location.image} className="card-img-top" alt={location.name} />
+                  <img
+                    src={location.image}
+                    className="card-img-top"
+                    alt={location.name}
+                  />
                 </div>
-                <div className="card-body">
+                <div className="card-body text-center">
                   <h5 className="card-title fw-bold">{location.name}</h5>
-                  <p className="card-text text-muted">{location.description}</p>
+                  <p className="card-text">{location.description}</p>
+                  <button className="btn btn-primary mt-3">
+                    Explore
+                  </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </main>

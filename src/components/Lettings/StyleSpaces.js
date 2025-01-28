@@ -5,6 +5,7 @@ import card3 from "../../image2.jpg";
 import card4 from "../../image1.jpg";
 import card5 from "../../image2.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { motion } from "framer-motion"; // For animations
 import "./Spaces.css"; // Add custom styles in an external file
 
 function StyleSpaces() {
@@ -17,42 +18,38 @@ function StyleSpaces() {
   ];
 
   return (
-    <div className="container my-5">
-      <h3 className="text-center fw-bold mb-4">
+    <div
+      className="container-fluid py-5"
+      style={{
+        backgroundColor: "#f5f5f5", // Subtle light background to contrast blue/black
+      }}
+    >
+      <h3 className="text-center fw-bold mb-4 modern-heading">
         Find spaces that suit your style
       </h3>
-      <div
-        className="d-flex flex-wrap justify-content-center gap-3"
-        style={{
-          scrollSnapType: "x mandatory",
-          overflowX: "auto",
-          overflowY: "hidden",
-          padding: "10px",
-        }}
-      >
+      <div className="spaces-grid">
         {spaces.map((space, index) => (
-          <div
+          <motion.div
+            className="card space-card"
             key={index}
-            className="card border-0 shadow-sm"
-            style={{
-              width: "calc(100% - 20px)", // Full width for small screens
-              maxWidth: "250px", // Limit card width for larger screens
-              scrollSnapAlign: "center",
-              flex: "0 0 auto",
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
           >
             <div className="image-container">
               <img
                 src={space.image}
                 className="card-img-top rounded image-hover"
-                alt={space.title}
+                alt={`Image of ${space.title}`}
                 style={{ height: "200px", objectFit: "cover" }}
               />
             </div>
             <div className="card-body text-center">
-              <h5 className="card-title fw-bold">{space.title}</h5>
+              <h5 className="card-title fw-bold gradient-badge">
+                {space.title}
+              </h5>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

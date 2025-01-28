@@ -1,49 +1,88 @@
-.container {
+/* General Container Styles */
+.lettings-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
+    background: #f7f7f7; /* Subtle background for sections */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add shadow for a modern look */
   }
   
+  /* Section Title Styling */
+  .section-title {
+    font-size: 2.2rem;
+    color: #2563eb; /* Accent blue color */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Text Styling */
+  .text-muted {
+    font-size: 1rem;
+    color: #555555; /* Neutral gray for readability */
+    line-height: 1.6;
+  }
+  
+  /* Buttons */
   .btn-primary {
-    display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: #2563eb;
-    color: #fff;
+    background-color: #2563eb; /* Blue accent color */
+    color: #ffffff;
     font-weight: 600;
     border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
   
   .btn-primary:hover {
-    background-color: #1d4ed8;
+    background-color: #1d4ed8; /* Darker blue on hover */
     transform: scale(1.05);
   }
   
-  .image-effect {
-    width: 40%;
-    max-width: 100px;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Image Wrapper */
+  .image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .letting-image {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover; /* Ensure the image maintains aspect ratio */
+    object-position: center;
     transition: transform 0.3s ease;
   }
   
-  .image-effect:hover {
-    transform: scale(1.05);
-  }
-  /* Reduce the size of images while keeping them responsive */
-.letting-image {
-    max-width: 100%; /* Keep image responsive */
-    max-height: 300px; /* Limit the height of the image */
-    object-fit: cover; /* Ensure the image fills the container while maintaining aspect ratio */
+  .image-wrapper:hover .letting-image {
+    transform: scale(1.05); /* Subtle zoom effect on hover */
   }
   
-  /* Responsive adjustments */
+  /* Responsive Adjustments */
   @media (max-width: 768px) {
     .letting-image {
-      max-height: 200px; /* Reduce height for smaller screens */
+      max-height: 250px; /* Adjust image height for smaller screens */
+    }
+  
+    .section-title {
+      font-size: 1.8rem;
+    }
+  
+    .btn-primary {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .section-title {
+      font-size: 1.6rem;
+    }
+  
+    .text-muted {
+      font-size: 0.9rem;
     }
   }
   

@@ -1,28 +1,30 @@
-/* ExploreOptionsPage.css */
-
 /* General styles for the explore section */
 .explore-page {
-    background: #f9f9f9; /* Light background */
+    background: #f7f7f7; /* Clean light gray */
   }
   
-  .explore-page h2 {
+  .modern-heading {
     font-size: 2.5rem;
-    color: #333;
+    color: #0d6efd; /* Business-class blue for the heading */
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
   
+  /* Card Styling */
   .explore-card {
     border: none; /* Remove default border */
     border-radius: 15px; /* Smooth corners */
     overflow: hidden; /* Ensure image stays within rounded corners */
+    background: #ffffff; /* White background for a clean look */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
   }
   
-  /* Card hover effects */
   .explore-card:hover {
     transform: translateY(-5px); /* Subtle lift on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Add shadow */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Add a deeper shadow on hover */
   }
   
+  /* Image Wrapper and Hover Effect */
   .image-wrapper {
     height: 200px; /* Fixed height for images */
     overflow: hidden;
@@ -36,23 +38,42 @@
   }
   
   .image-wrapper img:hover {
-    transform: scale(1.1); /* Zoom in on hover */
+    transform: scale(1.05); /* Zoom in on hover */
   }
   
+  /* Card Title and Text */
   .card-title {
     font-size: 1.25rem;
     color: #0d6efd; /* Bootstrap primary blue */
+    text-transform: uppercase;
   }
   
   .card-text {
     font-size: 0.9rem;
-    color: #555;
+    color: #555555; /* Neutral gray for readability */
+  }
+  
+  /* Learn More Button */
+  .btn-primary {
+    background-color: #0d6efd; /* Accent blue */
+    border-color: #0d6efd;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #094bb2; /* Darker blue on hover */
   }
   
   /* Responsive Adjustments */
   @media (max-width: 768px) {
-    .explore-page h2 {
+    .modern-heading {
       font-size: 2rem;
+    }
+  
+    .image-wrapper {
+      height: 150px; /* Reduce image height on smaller screens */
     }
   
     .card-title {
@@ -62,14 +83,10 @@
     .card-text {
       font-size: 0.85rem;
     }
-  
-    .image-wrapper {
-      height: 150px; /* Reduce image height on smaller screens */
-    }
   }
   
   @media (max-width: 576px) {
-    .explore-page h2 {
+    .modern-heading {
       font-size: 1.8rem;
     }
   }

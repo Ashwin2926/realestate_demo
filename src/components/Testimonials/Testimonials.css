@@ -1,59 +1,110 @@
-.testimonials {
-  background-color: #f8f9fa; /* Light background for section */
-  color: #343a40; /* Dark text */
+/* Section Styling */
+.testimonials-section {
+  background-color: #f7f7f7;
+  color: #333333;
+  padding: 3rem 1.5rem;
 }
 
-.testimonials h2 {
-  font-weight: bold;
-  font-size: 2rem;
-  color: #212529; /* Darker header color */
-  margin-bottom: 1.5rem;
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2563eb; /* Accent color for business look */
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* Testimonial Card */
 .testimonial-card {
   background-color: #ffffff;
-  border: 1px solid #dee2e6;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.testimonial-card img {
-  border: 2px solid #dee2e6;
+.testimonial-card:hover {
+  transform: scale(1.05); /* Subtle zoom on hover */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
-.testimonial-card .fst-italic {
+.profile-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #2563eb; /* Blue border for modern look */
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  color: #555555; /* Muted dark for quotes */
   font-style: italic;
-  color: #495057; /* Slightly muted dark for quotes */
-  font-size: 1rem;
 }
 
-.testimonial-card .fw-bold {
-  color: #212529; /* Bold names in dark color */
+.stars i {
+  font-size: 1.2rem;
 }
 
-.testimonial-card .bi-star-fill {
-  font-size: 1rem;
-  margin-right: 2px;
+.testimonial-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #212529;
 }
 
-.testimonial-card .bi-star {
-  font-size: 1rem;
-  margin-right: 2px;
-  color: #adb5bd;
+/* Carousel Styling */
+.testimonials-carousel .carousel-indicators [data-bs-target] {
+  background-color: #2563eb;
 }
 
-.carousel-indicators [data-bs-target] {
-  background-color: #343a40; /* Dark indicator dots */
+.testimonials-carousel .carousel-indicators [data-bs-target].active {
+  background-color: #1d4ed8;
 }
 
-.carousel-indicators [data-bs-target]:hover,
-.carousel-indicators [data-bs-target].active {
-  background-color: #007bff; /* Active indicator color */
+.testimonials-carousel .carousel-item {
+  text-align: center;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: brightness(0.5);
+}
+
+/* Responsive Styling */
 @media (max-width: 768px) {
   .testimonial-card {
-    padding: 15px;
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .profile-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+
+  .testimonial-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonial-card {
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .stars i {
+    font-size: 1rem;
   }
 }

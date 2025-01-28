@@ -1,7 +1,9 @@
+
 /* Features Section */
 .features-section {
-  background: #f9f9f9;
+  background: linear-gradient(135deg, #f5f7fa, #ffffff);
   padding: 2rem;
+  color: #495057;
 }
 
 .features-section .icon {
@@ -11,7 +13,9 @@
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  color: #000;
+  color: #007bff;
+  background: linear-gradient(135deg, #e0e7ff, #ffffff);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 }
 
@@ -19,12 +23,12 @@
   height: 100%;
   overflow: hidden;
   position: relative;
-  border-radius: 20%;
+  border-radius: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .features-section .image-wrapper img {
-  border-radius: 20%;
+  border-radius: 20px;
   object-fit: cover;
   width: 100%;
   height: auto;
@@ -34,7 +38,6 @@
 .features-section .image-wrapper:hover img {
   transform: scale(1.1);
   filter: brightness(0.9);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .features-section .image-wrapper:hover {
@@ -42,88 +45,100 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.features-section .image-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.features-section .image-overlay h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
 .features-section h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #000000;
+  color: #212529;
 }
 
 .features-section p {
-  color: #666;
-  font-size: 1rem;
+  color: #6c757d;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
 .features-section h6 {
   font-weight: bold;
-  color: #0d6efd;
+  color: #007bff;
 }
 
 .features-section .small {
-  color: #666;
+  color: #6c757d;
+}
+
+.features-section .divider {
+  width: 80%;
+  height: 1px;
+  background: #ddd;
+  margin: 1.5rem 0;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .features-section {
-    padding: 1.5rem; /* Reduce padding for smaller screens */
+    padding: 1.5rem;
   }
 
   .features-section h2 {
-    font-size: 1.5rem; /* Adjust heading font size */
+    font-size: 1.8rem;
   }
 
   .features-section p {
-    font-size: 0.9rem; /* Adjust paragraph font size */
+    font-size: 1rem;
   }
 
   .features-section .row.align-items-center {
-    flex-direction: column-reverse; /* Stack text section above image */
+    flex-direction: column-reverse;
   }
 
   .features-section .col-lg-6 {
-    text-align: center; /* Center align text for smaller screens */
-    margin-bottom: 1.5rem; /* Add spacing between sections */
+    text-align: center;
+    margin-bottom: 1.5rem;
   }
 
   .features-section .image-wrapper img {
-    border-radius: 10%; /* Adjust image border radius */
+    border-radius: 15px;
   }
 
-  /* Features Grid */
-  .features-section .row.gy-4 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns side-by-side */
-    gap: 1rem; /* Add spacing between items */
-    justify-content: center; /* Center items horizontally */
-  }
-
-  .features-section .col-6 {
-    flex: unset; /* Remove flex behavior */
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start; /* Ensure text starts aligned */
+  .features-section .divider {
+    width: 100%;
   }
 }
 
-/* Very Small Screens (Optional) */
 @media (max-width: 576px) {
   .features-section .row.gy-4 {
-    grid-template-columns: 1fr; /* Stack features in a single column */
-    gap: 1.5rem; /* Increase spacing between rows */
-    justify-content: center; /* Center features horizontally */
-    align-items: center; /* Center features vertically */
-    text-align: center; /* Center-align text inside each feature */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   .features-section .col-6 {
     display: flex;
-    flex-direction: column; /* Stack icon and text vertically */
-    align-items: center; /* Center-align content within each feature */
-    justify-content: center; /* Center-align vertically */
+    flex-direction: column;
+    align-items: center;
   }
 
   .features-section .icon {
-    margin-bottom: 0.5rem; /* Add space between icon and text */
+    margin-bottom: 0.5rem;
   }
 }
-
