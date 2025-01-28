@@ -11,6 +11,7 @@ import CallToAction from "./components/Lettings/CallToAction";
 import TeamSection from "./components/Team/Team";
 import AboutUs from "./components/AboutUs/About";
 import FAQ from "./components/Offers/Offers";
+import FloatingButtons from "./components/FloatingButtons/FloatingButtons";
 
 function App() {
   const [showForm, setShowForm] = useState(false);
@@ -32,6 +33,7 @@ function App() {
       <TeamSection/>
       <Lettings/>
       <Testimonials/>
+      <FloatingButtons/>
       <Footer/>
     </>
   );
