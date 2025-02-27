@@ -19,7 +19,7 @@ function LandingPage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBackground((prev) => (prev + 1) % backgroundImages.length);
-    }, 5000); // Change image every 5 seconds
+    }, 5000); 
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
 
