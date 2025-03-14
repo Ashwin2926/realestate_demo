@@ -44,7 +44,7 @@ const FloatingButtons = () => {
         {menuOpen && (
           <div className="fab-menu">
             <a
-              href="https://wa.me/1234567890" // Replace with your WhatsApp link
+              href="https://wa.me/971547047913" // Replace with your WhatsApp link
               target="_blank"
               rel="noopener noreferrer"
               className="fab-icon whatsapp"

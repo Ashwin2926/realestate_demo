@@ -19,6 +19,12 @@
   background-position: center;
   background-repeat: no-repeat;
   transition: opacity 1s ease-in-out;
+  z-index: 0;
+  opacity: 0; /* Ensuring the next image starts hidden */
+}
+
+.background.current {
+  opacity: 1; /* Ensure the current background is visible */
 }
 
 /* Dark overlay for text readability */
@@ -65,6 +71,24 @@
   background-color: #084298;
   transform: scale(1.05);
 }
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .hero-content {
+    height: 90vh;
+  }
+  .btn-primary {
+    width: 80%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    height: 100vh;
+  }
+}
+
 
 /* Why Choose Us Section */
 .why-choose-us {

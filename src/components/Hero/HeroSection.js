@@ -5,10 +5,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./HeroSection.css";
 import { motion } from "framer-motion";
 import { FaShieldAlt, FaHeadset, FaHome } from "react-icons/fa";
-import image1 from "../../assets/background.jpg";
-import image2 from "../../assets/background2.jpg";
-import image3 from "../../assets/background3.jpg";
-import image4 from "../../assets/background4.jpg";
+import image1 from "../../assets/background.webp";
+import image2 from "../../assets/background2.webp";
+import image3 from "../../assets/background3.webp";
+import image4 from "../../assets/background4.webp";
 
 const backgroundImages = [image1, image2, image3, image4];
 
@@ -77,7 +77,7 @@ function LandingPage() {
           </motion.p>
 
           <motion.button
-            className="btn btn-outline-primary mt-3"
+            className="btn btn-outline-primary text-white mt-3"
             onClick={() => navigate("/results")}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

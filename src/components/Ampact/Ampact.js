@@ -1,77 +1,68 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Ampact.css";
-import image from "../../image1.jpg";
+import natureImage from "../../assets/nature.jpg";
+import diningImage from "../../assets/dining.jpg";
+import beachImage from "../../assets/beaches.jpg";
 
 const Ampact = () => {
+  const cards = [
+    {
+      id: 1,
+      image: natureImage,
+      title: "Explore Nature’s Wonders",
+      subtitle: "Pristine Landscapes",
+      description:
+        "Immerse yourself in the lush greenery and diverse wildlife that Raja Ampat offers.",
+    },
+    {
+      id: 2,
+      image: diningImage,
+      title: "Luxurious Dining",
+      subtitle: "Gourmet Experiences",
+      description:
+        "Indulge in world-class dining experiences with breathtaking ocean views.",
+    },
+    {
+      id: 3,
+      image: beachImage,
+      title: "Idyllic Beaches",
+      subtitle: "Crystal-Clear Waters",
+      description:
+        "Relax on the finest beaches, where turquoise waters meet golden sands.",
+    },
+  ];
+
   return (
     <div className="container-fluid p-5 raja-container">
       {/* Header Section */}
-      <div className="row align-items-center">
+      <div className="row align-items-center mb-5">
         <div className="col-lg-6">
-          <h6 className="section-subtitle">The Raja Ampat</h6>
-          <h1 className="section-title">
-            The Unmatched Beauty of the Archipelago
-          </h1>
+          <h6 className="section-subtitle">Capital Stay</h6>
+          <h1 className="section-title">Discover the Beauty of Paradise</h1>
         </div>
         <div className="col-lg-6">
-          <p className="section-description">
-            Raja Ampat, with its unparalleled natural beauty, offers a
-            spectacular panoramic view of the archipelago, captivating visitors
-            with its natural wonders and incredible underwater treasures.
+          <p className="section-description text-black">
+            Explore Capital Stay’s stunning natural beauty, luxurious amenities,
+            and breathtaking beaches—an experience like no other.
           </p>
         </div>
       </div>
 
-      {/* Card Section */}
-      <div className="row mt-5 g-4 card-container">
-        {/* Location Card */}
-        <div className="col-md-3">
-          <div className="custom-card location-card fade-in">
-            <img src={image} alt="Location" className="card-image" />
-            <p className="card-text">See a true location</p>
-            <button className="expand-icon">⤢</button>
-          </div>
-        </div>
-
-        {/* Weather Card */}
-        <div className="col-md-3">
-          <div className="custom-card weather-card fade-in">
-            <img src={image} alt="Weather" className="card-image" />
-            <div className="weather-overlay">
-              <h2>32°</h2>
-              <p>Sunny</p>
-            </div>
-            <button className="expand-icon">⤢</button>
-          </div>
-        </div>
-
-        {/* Rating Card */}
-        <div className="col-md-3">
-          <div className="custom-card rating-card fade-in">
-            <div className="avatar-group">
-              {Array(4).fill().map((_, index) => (
-                <img key={index} src={image} alt="User" className="avatar" />
-              ))}
-            </div>
-            <h3>⭐ 4.6K</h3>
-            <p>The most beautiful diving destinations in the world</p>
-          </div>
-        </div>
-
-        {/* Beach Card */}
-        <div className="col-md-3">
-          <div className="custom-card island-card fade-in">
-            <img src={image} alt="Beach" className="card-image" />
-            <p className="card-text">
-              The most beautiful beaches on the island of Papua
-            </p>
-            <div className="slider-nav">
-              <button className="slider-btn">◀</button>
-              <button className="slider-btn">▶</button>
+      {/* Feature Cards */}
+      <div className="row mt-4">
+        {cards.map((card) => (
+          <div key={card.id} className="col-lg-4 col-md-6 mb-4">
+            <div className="feature-card">
+              <img src={card.image} alt={card.title} className="feature-img" />
+              <div className="card-content">
+                <h3 className="text-primary">{card.title}</h3>
+                <p className="text-white">{card.subtitle}</p>
+                <span className="card-description">{card.description}</span>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
