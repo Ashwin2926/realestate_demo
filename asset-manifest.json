@@ -1,35 +1,38 @@
 {
   "files": {
-    "main.css": "/realestate_demo/static/css/main.9110d172.css",
-    "main.js": "/realestate_demo/static/js/main.5ba86c62.js",
+    "main.css": "/realestate_demo/static/css/main.a3b18ed8.css",
+    "main.js": "/realestate_demo/static/js/main.f65f6fd6.js",
     "static/media/villa.jpg": "/realestate_demo/static/media/villa.68953eee73b8489806dc.jpg",
+    "static/media/background.jpg": "/realestate_demo/static/media/background.344a55b4e047866217e1.jpg",
     "static/media/mountains.jpg": "/realestate_demo/static/media/mountains.344a55b4e047866217e1.jpg",
-    "static/media/background.jpg": "/realestate_demo/static/media/background.c497ae9d8b8fa61e6ccd.jpg",
-    "static/media/image1.jpg": "/realestate_demo/static/media/image1.bd7d58664dacb8354446.jpg",
+    "static/media/background.webp": "/realestate_demo/static/media/background.69605bf0047d04b21034.webp",
+    "static/media/nature.jpg": "/realestate_demo/static/media/nature.30b8ec1af6f59fb7f85a.jpg",
     "static/media/about.jpg": "/realestate_demo/static/media/about.5847811b165ca183b4a0.jpg",
     "static/media/lettings1.jpg": "/realestate_demo/static/media/lettings1.3cc481d285f545937d16.jpg",
+    "static/media/background3.webp": "/realestate_demo/static/media/background3.5e5a1837291ccae773b0.webp",
     "static/media/water.jpg": "/realestate_demo/static/media/water.3410cd38ab9f83ed2a81.jpg",
     "static/media/city.jpg": "/realestate_demo/static/media/city.70cdde0a5cc760763150.jpg",
-    "static/media/background4.jpg": "/realestate_demo/static/media/background4.e49b54bd039be567ea86.jpg",
-    "static/media/background2.jpg": "/realestate_demo/static/media/background2.7a753a1e70e8127dc0f4.jpg",
+    "static/media/background4.webp": "/realestate_demo/static/media/background4.78b1a53b18f166807756.webp",
+    "static/media/beaches.jpg": "/realestate_demo/static/media/beaches.c6ff03c83c4cc214e96c.jpg",
     "static/media/peace.jpg": "/realestate_demo/static/media/peace.fed96ef21a0257f42ef8.jpg",
     "static/media/discover.jpg": "/realestate_demo/static/media/discover.f90ed5e90b58a6c710ee.jpg",
     "static/media/pic2.jpg": "/realestate_demo/static/media/pic2.4f2666070f85cf8f0304.jpg",
     "static/media/discover4.jpg": "/realestate_demo/static/media/discover4.ad23bd8953335c57d8db.jpg",
     "static/media/listing.jpg": "/realestate_demo/static/media/listing.b44ae4db21df8a2fcaab.jpg",
     "static/media/discover3.jpg": "/realestate_demo/static/media/discover3.a76ebaa3b9c14efe3430.jpg",
-    "static/media/background3.jpg": "/realestate_demo/static/media/background3.0337d2fcf81e13089e51.jpg",
     "static/media/lettings2.jpg": "/realestate_demo/static/media/lettings2.23b9b501a64eedba04b3.jpg",
     "static/media/discover2.jpg": "/realestate_demo/static/media/discover2.1f0ef14485b737b02996.jpg",
+    "static/media/dining.jpg": "/realestate_demo/static/media/dining.a0da43eabe497bc88694.jpg",
     "static/media/calm.jpg": "/realestate_demo/static/media/calm.7f1dc81d1597ab1fbc89.jpg",
     "static/media/pic1.jpg": "/realestate_demo/static/media/pic1.2fcfa2efccf97d66aa64.jpg",
+    "static/media/background2.webp": "/realestate_demo/static/media/background2.dd05e8389300efe842ca.webp",
     "static/media/logo.png": "/realestate_demo/static/media/logo.5d0c95ae99c8995ea6c8.png",
     "index.html": "/realestate_demo/index.html",
-    "main.9110d172.css.map": "/realestate_demo/static/css/main.9110d172.css.map",
-    "main.5ba86c62.js.map": "/realestate_demo/static/js/main.5ba86c62.js.map"
+    "main.a3b18ed8.css.map": "/realestate_demo/static/css/main.a3b18ed8.css.map",
+    "main.f65f6fd6.js.map": "/realestate_demo/static/js/main.f65f6fd6.js.map"
   },
   "entrypoints": [
-    "static/css/main.9110d172.css",
-    "static/js/main.5ba86c62.js"
+    "static/css/main.a3b18ed8.css",
+    "static/js/main.f65f6fd6.js"
   ]
 }
