@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import image from "../../image1.jpg";
+import image from "../../assets/listing.jpg";
 function CallToAction({ showForm, toggleForm }) {
     return (
       <>

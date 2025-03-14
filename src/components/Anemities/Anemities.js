@@ -1,7 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { motion } from "framer-motion";
 import { FaHeadset, FaWifi, FaBook, FaClock, FaShieldAlt, FaGem } from "react-icons/fa";
-import Pic from "../../image2.jpg";
+import Pic from "../../assets/peace.jpg";
 import "./Anemities.css";
 
 const Anemities = () => {
@@ -15,42 +16,44 @@ const Anemities = () => {
   ];
 
   return (
-    <section className="features-section py-5">
+    <section className="features-section">
       <div className="container">
         <div className="row align-items-center">
-          {/* Text Section */}
-          <div className="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
-            <h2 className="fw-bold text-black mb-3">Peace of Mind with Every Booking</h2>
-            <p className="text-muted">
-              From fresh towels to late checkout, our app puts you in control.
-            </p>
+          {/* Left Content Section */}
+          <div className="col-lg-6">
+            <h2 className="fw-bold">Peace of Mind with Every Booking</h2>
+            <p className="text-muted">From fresh towels to late checkout, our app puts you in control.</p>
             <div className="divider"></div>
-            <div className="row gy-4 mt-4">
-              {features.map((feature, index) => (
-                <div className="col-6" key={index}>
-                  <div className="card p-3 shadow-sm border-0 rounded-3">
-                    <div className="icon mb-3">{feature.icon}</div>
-                    <h6 className="mb-1">{feature.title}</h6>
-                    <p className="small text-muted">{feature.desc}</p>
-                  </div>
-                </div>
+            <div className="features-grid">
+              {features.map(({ icon, title, desc }, index) => (
+                <motion.div 
+                  key={index}
+                  className="feature-card"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <div className="feature-icon">{icon}</div>
+                  <h6 className="feature-title">{title}</h6>
+                  <p className="feature-desc">{desc}</p>
+                </motion.div>
               ))}
             </div>
           </div>
 
-          {/* Image Section */}
+          {/* Right Image Section */}
           <div className="col-lg-6">
-            <div className="image-wrapper">
-              <img
-                src={Pic}
-                alt="Family enjoying the stay"
-                className="img-fluid"
+            <motion.div className="image-wrapper">
+              <motion.img 
+                src={Pic} 
+                alt="Luxury Rental Home" 
+                className="img-fluid "
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
               />
-              <div className="image-overlay">
-                <h3 style={{color: "#fff"}}>Your Trusted Partner in Luxury Rentals</h3>
-                <button className="btn btn-primary px-4 py-2 rounded-pill shadow-sm mt-3">Explore Rentals</button>
-              </div>
-            </div>
+           
+            </motion.div>
           </div>
         </div>
       </div>

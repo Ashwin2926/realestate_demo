@@ -1,9 +1,9 @@
 import React from "react";
-import card1 from "../../image1.jpg"; // Ensure the path is correct
-import card2 from "../../image2.jpg";
-import card3 from "../../image2.jpg";
-import card4 from "../../image1.jpg";
-import card5 from "../../image2.jpg";
+import card1 from "../../assets/styles/villa.jpg"; // Ensure the path is correct
+import card2 from "../../assets/styles/calm.jpg";
+import card3 from "../../assets/styles/water.jpg";
+import card4 from "../../assets/styles/city.jpg";
+import card5 from "../../assets/styles/mountains.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { motion } from "framer-motion"; // For animations
 import "./Spaces.css"; // Add custom styles in an external file
@@ -18,23 +18,24 @@ function StyleSpaces() {
   ];
 
   return (
-    <div
+    <div id="style-spaces"
       className="container-fluid py-5"
       style={{
         backgroundColor: "#f5f5f5", // Subtle light background to contrast blue/black
       }}
     >
-      <h3 className="text-center fw-bold mb-4 modern-heading">
-        Find spaces that suit your style
+      <h3 className="text-center fw-bold mb-2 modern-heading refined-heading">
+         Spaces that Match Your Style
       </h3>
       <div className="spaces-grid">
         {spaces.map((space, index) => (
           <motion.div
             className="card space-card"
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.2 }}
           >
             <div className="image-container">
               <img
@@ -43,6 +44,7 @@ function StyleSpaces() {
                 alt={`Image of ${space.title}`}
                 style={{ height: "200px", objectFit: "cover" }}
               />
+              <div className="image-overlay"></div>
             </div>
             <div className="card-body text-center">
               <h5 className="card-title fw-bold gradient-badge">

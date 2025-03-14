@@ -1,85 +1,181 @@
-/* Navbar.css */
-
-/* Default Navbar */
+/* Base Navbar Styles */
 .navbar {
-  background: linear-gradient(90deg, #ffffff 0%, #f8f9fa 100%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-  padding: 0.5rem 1rem;
+  height: 80px;
+  padding: 0.75rem 0;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1050;
 }
 
-/* Navbar when scrolled */
+/* Transparent Navbar (Initial State) */
+.navbar.transparent {
+  background: transparent;
+}
+
+/* Scrolled Navbar */
 .navbar.scrolled {
-  background-color: rgba(250, 250, 252, 0.85);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  height: 65px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Logo */
+.logo {
+  height: 70px;
+  transition: height 0.3s ease;
+}
+
+.navbar.scrolled .logo {
+  height: 55px;
 }
 
 /* Navbar Links */
-.nav-link {
-  color: #333;
+.navbar .nav-link {
   font-weight: 500;
   transition: color 0.3s ease-in-out;
   font-size: 1rem;
-  text-transform: capitalize;
+  position: relative;
+  color: white;
 }
 
-.nav-link:hover {
-  color: #0056b3;
-  text-decoration: underline;
+/* Hover underline effect */
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 
-/* Logo */
-.logo {
-  height: 60px;
-  max-width: 120px;
-  width: auto;
-  transition: transform 0.4s ease-in-out;
+.navbar .nav-link:hover::after {
+  width: 100%;
+  left: 0;
 }
 
-.logo:hover {
-  transform: scale(1.15);
+/* Navbar Links on Scroll */
+.navbar.scrolled .nav-link {
+  color: black !important;
 }
 
-/* Button Styling */
-.navbar .btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
-  border-radius: 20px;
+/* Navbar Button */
+.list-property-btn {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  transition: all 0.3s ease;
   padding: 0.5rem 1rem;
-  font-weight: bold;
-  transition: background-color 0.3s ease-in-out, transform 0.2s;
+  font-size: 0.9rem;
 }
 
-.navbar .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #004085;
-  transform: scale(1.05);
-  box-shadow: 0px 4px 12px rgba(0, 123, 255, 0.3);
+.list-property-btn:hover {
+  background: white;
+  color: black;
 }
 
-/* Toggler Icon Customization */
-.navbar-toggler {
-  border: none;
+/* Button Changes on Scroll */
+.navbar.scrolled .list-property-btn {
+  border: 1px solid black;
+  color: black;
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-  width: 1.5rem;
-  height: 1.5rem;
+.navbar.scrolled .list-property-btn:hover {
+  background: black;
+  color: white;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0.25rem 1rem;
+/* Mobile Navbar */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    transform: translateY(-100%);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000; /* Lower than the toggler */
   }
 
-  .navbar .nav-link {
-    font-size: 0.9rem;
+  /* Show Navbar when open */
+  .navbar-collapse.show {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
   }
 
-  .navbar-brand {
-    margin: auto;
-    padding: 0.5rem 0;
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    color: white !important;
+    padding: 12px 0;
+    font-size: 1.3rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #f8b400 !important;
+  }
+  
+  /* Ensure mobile nav links remain white even on scroll */
+  @media (max-width: 991px) {
+    .navbar.scrolled .navbar-nav .nav-link {
+      color: white !important;
+    }
+  }
+  
+
+  .list-property-btn {
+    display: block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /* Mobile Toggler Icon */
+  .navbar .navbar-toggler {
+    position: relative;
+    z-index: 1100; /* Ensures button is above menu */
+    border: none;
+    outline: none;
+    padding: 0;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar .navbar-toggler svg {
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  /* Change color on scroll */
+  .navbar.scrolled .navbar-toggler svg {
+    color: black !important;
+  }
+
+  /* Rotate icon when menu opens */
+  .navbar .navbar-toggler[aria-expanded="true"] svg {
+    transform: rotate(180deg);
   }
 }

@@ -1,44 +1,49 @@
 import React from "react";
-import AboutImage from '../../pic2.jpg';
+import AboutImage from '../../assets/about.jpg';
 import './About.css';
 
 const AboutUs = () => {
   return (
     <div className="about-container">
-      <h2 className="text-center fw-bold mb-5">About Us</h2>
+      <h2 className="text-center fw-bold mb-4">About Us</h2>
 
       {/* First Row */}
       <div className="row align-items-center mb-5">
-        <div className="col-md-6 mb-4 mb-md-0 image-wrapper">
-          <img
-            src={AboutImage} // Replace with actual image URL
-            alt="About Us"
-            className="img-fluid rounded shadow"
-          />
+        {/* Image Column */}
+        <div className="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
+          <div className="image-wrapper">
+            <img
+              src={AboutImage} 
+              alt="About Us"
+              className="img-fluid rounded"
+            />
+          </div>
         </div>
+
+        {/* Text Column */}
         <div className="col-md-6">
           <h3 className="fw-bold mb-3">What Capital Stay Rentals Offers</h3>
           <p>
-            Capital Stay offers a comprehensive management service, guest communication, pricing & revenue management, and a user-friendly online portal where landlords can manage their properties. To our guests, we deliver a seamless booking experience with instant booking confirmation and secure payment options.
+            Capital Stay provides full-service property management, seamless guest communication, and advanced revenue management. Our user-friendly portal allows landlords to oversee their properties effortlessly.
           </p>
           <p>
-            We provide personalized guest services, tailoring experiences such as concierge assistance and local activities. Our round-the-clock customer support ensures a stress-free experience by addressing any queries or issues during their stay.
+            Guests enjoy an intuitive booking experience with instant confirmations and secure payments. We offer personalized concierge services and 24/7 customer support for a stress-free stay.
           </p>
         </div>
       </div>
 
       {/* Second Row */}
       <div className="row align-items-center">
-        <div className="col-md-12 order-md-1">
-          <h3 className="fw-bold mb-3">Why Capital Stay Holiday Homes is a Perfect Choice</h3>
+        <div className="col-md-12">
+          <h3 className="fw-bold mb-3">Why Choose Capital Stay Holiday Homes?</h3>
           <p>
-            Holiday homes offer home-like comfort, often providing more space and amenities than traditional hotel rooms. This allows guests to enjoy a more comfortable and personalized experience. Renting a holiday home is cost-effective for families or groups, as it can be more economical than booking multiple hotel rooms. Additionally, kitchen facilities help save on dining costs.
+            Holiday homes provide spacious, home-like comfort, often featuring more amenities than traditional hotels. This makes them ideal for families and groups seeking cost-effective accommodations.
           </p>
           <p>
-            Holiday homes are located in unique, scenic settings, from beachside villas to mountain cabins, offering travelers a chance to stay in places that may not have hotel options. Staying in a holiday home provides an authentic local experience, allowing guests to immerse themselves in the local culture and discover hidden gems not highlighted in typical tourist guides.
+            Nestled in scenic locations, from beachfront villas to mountain retreats, our properties offer unique stays beyond conventional hotel options. Guests can experience local culture authentically, discovering hidden gems.
           </p>
           <p>
-            Guests also benefit from privacy and flexibility, setting their own schedules, cooking meals, and enjoying leisure activities at their own pace. Overall, holiday homes offer a blend of comfort, cost-effectiveness, and unique experiences for travelers while providing property owners with a lucrative and flexible investment opportunity.
+            Enjoy complete privacy and flexibility—set your own schedule, cook meals, and unwind at your own pace. Holiday homes offer the perfect blend of comfort, affordability, and exclusivity for travelers, while also providing property owners with a lucrative investment opportunity.
           </p>
         </div>
       </div>

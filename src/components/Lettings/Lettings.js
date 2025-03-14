@@ -1,13 +1,30 @@
-import React from "react";
-import lettingImage from "../../image1.jpg";
+import React, { useEffect } from "react";
+import letting1 from "../../assets/lettings/lettings1.jpg";
+import letting2 from "../../assets/lettings/lettings2.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Lettings.css"; // Updated CSS for styling
 
 function Lettings() {
+  useEffect(() => {
+    const elements = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  }, []);
+
   return (
     <div className="lettings-container container my-5">
       {/* Lettings Section */}
-      <div className="row align-items-center mb-5">
+      <div className="row align-items-center mb-5 fade-in">
         <div className="col-lg-6">
           <h2 className="fw-bold section-title mb-3">Lettings</h2>
           <p className="text-muted">
@@ -21,7 +38,7 @@ function Lettings() {
         <div className="col-lg-6">
           <div className="image-wrapper">
             <img
-              src={lettingImage}
+              src={letting1}
               alt="Lettings"
               className="img-fluid letting-image rounded shadow"
             />
@@ -29,8 +46,11 @@ function Lettings() {
         </div>
       </div>
 
+      {/* Gradient Divider */}
+      <div className="gradient-divider"></div>
+
       {/* Stay with Us Section */}
-      <div className="row align-items-center">
+      <div className="row align-items-center fade-in">
         <div className="col-lg-6 order-lg-2">
           <h2 className="fw-bold section-title mb-3">Stay with us</h2>
           <p className="text-muted">
@@ -43,7 +63,7 @@ function Lettings() {
         <div className="col-lg-6 order-lg-1">
           <div className="image-wrapper">
             <img
-              src={lettingImage}
+              src={letting2}
               alt="Stay with us"
               className="img-fluid letting-image rounded shadow"
             />

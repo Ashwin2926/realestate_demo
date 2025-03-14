@@ -1,95 +1,134 @@
+
+/* Spaces.css */
+
 /* General Styles */
 body {
-    background-color: #ffffff; /* Clean white background */
-    font-family: "Poppins", sans-serif; /* Modern font */
-    margin: 0;
-    color: #000000; /* Black text for high contrast */
-  }
-  
-  /* Modern Heading Style */
-  .modern-heading {
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: #000000; /* Bold blue for headings */
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  /* Grid Layout */
+  background-color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  color: #000000;
+}
+
+/* Modern Heading Style */
+.modern-heading {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Refined Heading Style */
+.refined-heading {
+  font-size: clamp(2.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #002a80;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+/* Grid Layout */
+.spaces-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 30px;
+  justify-items: center;
+}
+
+@media (min-width: 1200px) {
   .spaces-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-    gap: 20px;
-    padding: 20px;
-    justify-items: center;
+    grid-template-columns: repeat(5, 1fr); /* Ensure 5 cards fit in a row */
   }
-  
-  /* Card Styling */
+}
+
+/* Card Styling */
+.space-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.space-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Container & Hover */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.image-hover {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-hover:hover {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+/* Image Overlay */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+/* Gradient Badge for Titles */
+.gradient-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #0044cc, #001f60);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+/* Scrollbar Styling */
+.spaces-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.spaces-grid::-webkit-scrollbar-thumb {
+  background-color: #0044cc;
+  border-radius: 3px;
+}
+
+.spaces-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   .space-card {
-    position: relative;
-    background: #ffffff; /* White cards for a clean design */
-    border: 1px solid #e0e0e0; /* Subtle border for separation */
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
   }
-  
-  .space-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+
+  .modern-heading {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
   }
-  
-  /* Image Container & Hover */
-  .image-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
+
+  .spaces-grid {
+    padding: 20px;
   }
-  
-  .image-hover {
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-  
-  .image-hover:hover {
-    transform: scale(1.05); /* Slight zoom-in */
-    filter: brightness(0.9); /* Slightly dim the image */
-  }
-  
-  /* Gradient Badge for Titles */
-  .gradient-badge {
-    display: inline-block;
-    background: linear-gradient(90deg, #0044cc, #002a80); /* Blue gradient */
-    color: white;
-    padding: 5px 10px;
-    border-radius: 50px;
-    font-size: 1rem;
-    margin-top: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  
-  /* Scrollbar Styling */
-  .spaces-grid::-webkit-scrollbar {
-    height: 6px;
-  }
-  
-  .spaces-grid::-webkit-scrollbar-thumb {
-    background-color: #0044cc; /* Blue scrollbar */
-    border-radius: 3px;
-  }
-  
-  .spaces-grid::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .space-card {
-      width: 90%; /* Make cards take up more width on smaller screens */
-    }
-  
-    .modern-heading {
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
-    }
-  }
-  
+}

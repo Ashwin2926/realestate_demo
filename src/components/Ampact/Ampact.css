@@ -1,0 +1,155 @@
+/* General Styles */
+.raja-container {
+    font-family: 'Inter', sans-serif;
+    color: #2c2c2c;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Typography */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #777;
+  }
+  
+  .section-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+  }
+  
+  /* Custom Card Styles */
+  .custom-card {
+    border-radius: 24px;
+    padding: 20px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .custom-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Card Images */
+  .card-image {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  
+  /* Expand Icon */
+  .expand-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+  }
+  
+  /* Weather Card */
+  .weather-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 12px 20px;
+    border-radius: 12px;
+    color: white;
+  }
+  
+  .weather-overlay h2 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  /* Rating Card */
+  .rating-card {
+    text-align: center;
+    background: #fafafa;
+  }
+  
+  .avatar-group {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+  
+  /* Beach Card */
+  .island-card {
+    position: relative;
+    text-align: center;
+  }
+  
+  .slider-nav {
+    position: absolute;
+    bottom: 16px;
+    right: 20px;
+  }
+  
+  .slider-btn {
+    background: rgba(255, 255, 255, 0.85);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 6px;
+    font-size: 1rem;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2.5rem;
+    }
+  
+    .weather-overlay h2 {
+      font-size: 2.2rem;
+    }
+  
+    .avatar {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  

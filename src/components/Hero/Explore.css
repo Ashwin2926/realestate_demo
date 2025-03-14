@@ -1,93 +1,165 @@
-/* General styles for the explore section */
-.explore-page {
-    background: #f7f7f7; /* Clean light gray */
+/* Scoped styles for ExploreOptionsPage */
+.explore-options {
+  background: #f5f7fa;
+  padding: 60px 20px;
+}
+
+/* Heading */
+.explore-options-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a237e;
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: 0.5px;
+}
+.explore-options-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+/* Card Styling */
+.explore-options-card {
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 350px;
+}
+
+.explore-options-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Styling */
+.explore-options-image {
+  height: 220px;
+  overflow: hidden;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.explore-options-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.explore-options-card:hover .explore-options-image img {
+  transform: scale(1.05);
+}
+
+/* Card Content */
+.explore-options-content {
+  padding: 5px;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.explore-options-content h5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.explore-options-content p {
+  font-size: 0.95rem;
+  color: #616161;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Button */
+.explore-options-btn {
+  background-color: #3949ab;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  align-self: center;
+  width: 100%;
+}
+
+.explore-options-btn:hover {
+  background-color: #283593;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .explore-options-heading {
+    font-size: 2rem;
   }
-  
-  .modern-heading {
-    font-size: 2.5rem;
-    color: #0d6efd; /* Business-class blue for the heading */
-    text-transform: uppercase;
-    letter-spacing: 1px;
+
+  .explore-options-image {
+    height: 200px;
   }
-  
-  /* Card Styling */
-  .explore-card {
-    border: none; /* Remove default border */
-    border-radius: 15px; /* Smooth corners */
-    overflow: hidden; /* Ensure image stays within rounded corners */
-    background: #ffffff; /* White background for a clean look */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+
+  .explore-options-content {
+    padding: 18px;
   }
-  
-  .explore-card:hover {
-    transform: translateY(-5px); /* Subtle lift on hover */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Add a deeper shadow on hover */
+}
+
+@media (max-width: 768px) {
+  .explore-options-heading {
+    font-size: 1.8rem;
   }
-  
-  /* Image Wrapper and Hover Effect */
-  .image-wrapper {
-    height: 200px; /* Fixed height for images */
-    overflow: hidden;
+
+  .explore-options-image {
+    height: 180px;
   }
-  
-  .image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure image fits without distortion */
-    transition: transform 0.3s ease; /* Smooth zoom effect */
+
+  .explore-options-content h5 {
+    font-size: 1.2rem;
   }
-  
-  .image-wrapper img:hover {
-    transform: scale(1.05); /* Zoom in on hover */
-  }
-  
-  /* Card Title and Text */
-  .card-title {
-    font-size: 1.25rem;
-    color: #0d6efd; /* Bootstrap primary blue */
-    text-transform: uppercase;
-  }
-  
-  .card-text {
+
+  .explore-options-content p {
     font-size: 0.9rem;
-    color: #555555; /* Neutral gray for readability */
   }
-  
-  /* Learn More Button */
-  .btn-primary {
-    background-color: #0d6efd; /* Accent blue */
-    border-color: #0d6efd;
-    font-weight: bold;
-    border-radius: 50px;
-    transition: background-color 0.3s ease;
+
+  .explore-options-btn {
+    padding: 10px 20px;
   }
-  
-  .btn-primary:hover {
-    background-color: #094bb2; /* Darker blue on hover */
+}
+
+@media (max-width: 576px) {
+  .explore-options-heading {
+    font-size: 1.6rem;
   }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .modern-heading {
-      font-size: 2rem;
-    }
-  
-    .image-wrapper {
-      height: 150px; /* Reduce image height on smaller screens */
-    }
-  
-    .card-title {
-      font-size: 1.1rem;
-    }
-  
-    .card-text {
-      font-size: 0.85rem;
-    }
+
+  .explore-options-card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
   }
-  
-  @media (max-width: 576px) {
-    .modern-heading {
-      font-size: 1.8rem;
-    }
+
+  .explore-options-image {
+    height: 160px;
   }
-  
+
+  .explore-options-content {
+    padding: 5px;
+  }
+
+  .explore-options-btn {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+}
